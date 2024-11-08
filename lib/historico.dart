@@ -2,6 +2,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import './databaseclass.dart';
 import './tabuleiro.dart';
+import 'package:intl/intl.dart';
 
 class Historico extends StatelessWidget {
   const Historico({super.key});
@@ -56,7 +57,8 @@ class Historico extends StatelessWidget {
                         border: Border.all(color: Colors.black),
                       ),
                       child: ListTile(
-                        title: Text(jogo['data_jogo']),
+                        title: Text(  DateFormat('yyyy-MM-dd HH:mm').format(DateTime.parse(jogo['data_jogo']))
+),
                         subtitle: Text(jogo['vencedor']),
                       ),
                     ));
